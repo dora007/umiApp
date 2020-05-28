@@ -1,5 +1,3 @@
-
-// ref: https://umijs.org/config/
 export default {
   treeShaking: true,
   history: 'browser',
@@ -20,7 +18,7 @@ export default {
 
   proxy: {
     '/api/v1/': {
-      // target: 'http://127.0.0.1:38080/',
+      target: 'http://engprod-core.beta.iwosai.com/',
       changeOrigin: true,
       pathRewrite: {
         '^/server': '',
@@ -43,17 +41,20 @@ export default {
       ]
     },
   ],
+
+
   plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       dva: {
         immer: true,
       },
+      links: [
+        { rel: 'icon', href: 'https://sqb-qa.oss-cn-hangzhou.aliyuncs.com/427e7064-2212-4bda-8886-8c285ce81aec_favicon.png' },
+      ],
       antd: true,
       dynamicImport: false,
-      title: 'furcas',
+      title: '项目监控',
       dll: false,
-
       routes: {
         exclude: [
           /components\//,
